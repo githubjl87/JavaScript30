@@ -47,7 +47,7 @@
 
     // Array.prototype.sort()
     // 3. Sort the inventors by birthdate, oldest to youngest
-    const oToy = inventors.sort((a, b) => a.year > b.year ? 1 : -1)
+    const oToy = inventors.sort((a, b) => a.year > b.year ? 1 : -1);
     console.table(oToy);
 
     // Array.prototype.reduce()
@@ -84,8 +84,7 @@
     // 8. Reduce Exercise
     // Sum up the instances of each of these
     const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
-
-    const transportation = data.reduce( function(obj, item){
+   const transportation = data.reduce( function(obj, item){
       if (!obj[item]){
         obj[item] = 0;
       };
@@ -93,6 +92,8 @@
       return obj;
     },{});
     console.log(transportation);
+
+
 
   </script>
 </body>
