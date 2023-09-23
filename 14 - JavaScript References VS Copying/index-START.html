@@ -9,13 +9,30 @@
 
   <script>
     // start with strings, numbers and booleans
+    // let age = 80;
+    // let age2 = age;
+    // console.log(age, age2);
+    // age = 200;
+    // console.log(age, age2);
+
+    // let name = "james"
+    // let name2 = name;
+    // console.log(name, name2);
+    // name = "jimmy";
+    // console.log(name, name2);
+
 
     // Let's say we have an array
-    const players = ['Wes', 'Sarah', 'Ryan', 'Poppy'];
+    let players = ['Wes', 'Sarah', 'Ryan', 'Poppy'];
 
     // and we want to make a copy of it.
+    let team = players;
+    // console.log(players, team);
 
     // You might think we can just do something like this:
+    // team[3] = "Lux";
+    console.log(players, team);
+
 
     // however what happens when we update that array?
 
@@ -28,12 +45,25 @@
     // So, how do we fix this? We take a copy instead!
 
     // one way
+    team = players.slice();
+    team[3] = "Lux";
+    console.log(players, team);
+
+
 
     // or create a new array and concat the old one in
+    let team2 = [].concat(players);
+    team2[3] = "T2"
 
     // or use the new ES6 Spread
+    let team3 = [...players];
+    team3[3] = "T3"
+
 
     // now when we update it, the original one isn't changed
+    let team4 = Array.from(players);
+    team4[3] = "T4";
+    console.log(players, team, team2, team3, team4)
 
     // The same thing goes for objects, let's say we have a person object
 
