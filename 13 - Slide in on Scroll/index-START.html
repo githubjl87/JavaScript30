@@ -66,6 +66,14 @@
         const slideInAt = (window.scrollY + window.innerHeight) -
         slideImage.height / 2;
         const imageBottom = slideImage.offsetTop + slideImage.height;
+        const isHalfShown = slideInAt > slideImage.offsetTop;
+        const isNotScrolledPast = window.scrollY < imageBottom;
+        if (isHalfShown && isNotScrolledPast){
+          slideImage.classList.add('active');
+        }
+        else{
+          slideImage.classList.remove('active');
+        }
       });
 
     }
