@@ -59,15 +59,19 @@
       };
     }
 
-    const slideImages = document.querySelectorAll('slide-in');
+    const slideImages = document.querySelectorAll('.slide-in');
 
     function checkSlide(e) {
-      console.log(e);
+      slideImages.forEach(slideImage => {
+        const slideInAt = (window.scrollY + window.innerHeight) -
+        slideImage.height / 2;
+        const imageBottom = slideImage.offsetTop + slideImage.height;
+      });
 
     }
 
 
-    window.addEventListener('scroll', checkSlide);
+    window.addEventListener('scroll', debounce(checkSlide));
 
   </script>
 
