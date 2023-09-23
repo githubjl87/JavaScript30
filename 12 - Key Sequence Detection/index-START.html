@@ -9,9 +9,13 @@
   <body>
     <script>
       const pressed = [];
-      const secretKey = 'Wesbro';
+      const secretKey = 'james';
       window.addEventListener('keyup', (e) =>{
         pressed.push(e.key);
+        pressed.splice(-secretKey.length - 1, pressed.length - secretKey.length);
+        if (pressed.join('').includes(secretKey)){
+          cornify_add();
+        }
         console.log(pressed);
       })
     </script>
