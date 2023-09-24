@@ -38,9 +38,20 @@
       text,
       done: false,
     }
-console.log(text);
-this.reset();
+    items.push(item);
+    populateList(items, itemsList);
+    this.reset();
   };
+
+  function populateList(plates =[], plateList) {
+    plateList.innerHTML = plates.map((plate, i) => {
+      return `
+      <li>
+        <label for="">${plate.text}</label>
+      </li>
+      `
+    }).join('');
+  }
 
   addItems.addEventListener('submit', addItem)
 
