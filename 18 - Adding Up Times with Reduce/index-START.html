@@ -184,8 +184,9 @@
   </ul>
 <script>
 
-  const timeNodes = document.querySelectorAll('[data-time]');
-  console.log(timeNodes);
+  const timeNodes = Array.from(document.querySelectorAll('[data-time]'));
+  const seconds = timeNodes.map(node => node.dataset.time);
+  console.log(seconds);
 </script>
 </body>
 </html>
