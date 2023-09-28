@@ -36,9 +36,17 @@
     function highlightLink() {
       const linkCords = this.getBoundingClientRect();
       console.log(linkCords);
-      highLight.style.width = `${linkCords.width}px`;
-      highLight.style.height = `${linkCords.height}px`;
-      highLight.style.transform = `translate(${linkCords.left}px, ${linkCords.top}px)`;
+
+      const coords = {
+        width: linkCords.width,
+        height: linkCords.height,
+        left: linkCords.left + window.scrollX,
+        top: linkCords.top + window.scrollY
+      };
+
+      highLight.style.width = `${coords.width}px`;
+      highLight.style.height = `${coords.height}px`;
+      highLight.style.transform = `translate(${coords.left}px, ${coords.top}px)`;
 
 
     }
