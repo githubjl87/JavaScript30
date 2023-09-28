@@ -32,6 +32,12 @@
     const highLight = document.createElement('span');
     highLight.classList.add('highlight');
     document.body.append(highLight);
+
+    function highlightLink() {
+      console.log("highlight");
+    }
+
+    triggers.forEach(trigger => trigger.addEventListener('mouseenter', highlightLink));
   </script>
 </body>
 </html>
