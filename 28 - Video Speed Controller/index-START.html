@@ -29,6 +29,7 @@
     bar.style.height = height;
     const playbackRate = percent * (max - min) + min;
     bar.textContent = playbackRate.toFixed(2) + 'x';
+    video.playbackRate = playbackRate;
 })
 </script>
 </body>
